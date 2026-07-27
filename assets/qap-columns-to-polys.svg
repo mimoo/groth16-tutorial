@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-label="Each column of U, V, W becomes a polynomial">
+  <style>
+    .lbl  { font: 600 18px ui-sans-serif, system-ui, sans-serif; fill: #1f2937; }
+    .cell { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1f2937; }
+    .head { font: 600 13px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #6b7280; }
+    .poly { font: 600 13px ui-sans-serif, system-ui, sans-serif; fill: #4338ca; }
+    .box  { fill: #fff; stroke: #94a3b8; stroke-width: 1; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+    .arrow { stroke: #6366f1; stroke-width: 1.4; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- U -->
+  <g transform="translate(40,70)">
+    <text class="lbl" x="108" y="-26" text-anchor="middle">U</text>
+    <text class="head" x="18"  y="-6" text-anchor="middle">a₀</text>
+    <text class="head" x="54"  y="-6" text-anchor="middle">a₁</text>
+    <text class="head" x="90"  y="-6" text-anchor="middle">a₂</text>
+    <text class="head" x="126" y="-6" text-anchor="middle">a₃</text>
+    <text class="head" x="162" y="-6" text-anchor="middle">a₄</text>
+    <text class="head" x="198" y="-6" text-anchor="middle">a₅</text>
+    <rect class="box" x="0" y="0" width="216" height="220" rx="4"/>
+    <line class="grid" x1="0" y1="55"  x2="216" y2="55"/>
+    <line class="grid" x1="0" y1="110" x2="216" y2="110"/>
+    <line class="grid" x1="0" y1="165" x2="216" y2="165"/>
+    <line class="grid" x1="36"  y1="0" x2="36"  y2="220"/>
+    <line class="grid" x1="72"  y1="0" x2="72"  y2="220"/>
+    <line class="grid" x1="108" y1="0" x2="108" y2="220"/>
+    <line class="grid" x1="144" y1="0" x2="144" y2="220"/>
+    <line class="grid" x1="180" y1="0" x2="180" y2="220"/>
+
+    <text class="cell" x="18"  y="35" text-anchor="middle">3</text>
+    <text class="cell" x="54"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="35" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="90" text-anchor="middle">6</text>
+    <text class="cell" x="54"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="90" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="145" text-anchor="middle">11</text>
+    <text class="cell" x="54"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="145" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="200" text-anchor="middle">…</text>
+
+    <line class="arrow" x1="18"  y1="220" x2="18"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="54"  y1="220" x2="54"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="90"  y1="220" x2="90"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="126" y1="220" x2="126" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="162" y1="220" x2="162" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="198" y1="220" x2="198" y2="252" marker-end="url(#arr)"/>
+
+    <text class="poly" x="18"  y="276" text-anchor="middle">u₀(x)</text>
+    <text class="poly" x="54"  y="276" text-anchor="middle">u₁(x)</text>
+    <text class="poly" x="90"  y="276" text-anchor="middle">u₂(x)</text>
+    <text class="poly" x="126" y="276" text-anchor="middle">u₃(x)</text>
+    <text class="poly" x="162" y="276" text-anchor="middle">u₄(x)</text>
+    <text class="poly" x="198" y="276" text-anchor="middle">u₅(x)</text>
+  </g>
+
+  <!-- V -->
+  <g transform="translate(310,70)">
+    <text class="lbl" x="108" y="-26" text-anchor="middle">V</text>
+    <text class="head" x="18"  y="-6" text-anchor="middle">a₀</text>
+    <text class="head" x="54"  y="-6" text-anchor="middle">a₁</text>
+    <text class="head" x="90"  y="-6" text-anchor="middle">a₂</text>
+    <text class="head" x="126" y="-6" text-anchor="middle">a₃</text>
+    <text class="head" x="162" y="-6" text-anchor="middle">a₄</text>
+    <text class="head" x="198" y="-6" text-anchor="middle">a₅</text>
+    <rect class="box" x="0" y="0" width="216" height="220" rx="4"/>
+    <line class="grid" x1="0" y1="55"  x2="216" y2="55"/>
+    <line class="grid" x1="0" y1="110" x2="216" y2="110"/>
+    <line class="grid" x1="0" y1="165" x2="216" y2="165"/>
+    <line class="grid" x1="36"  y1="0" x2="36"  y2="220"/>
+    <line class="grid" x1="72"  y1="0" x2="72"  y2="220"/>
+    <line class="grid" x1="108" y1="0" x2="108" y2="220"/>
+    <line class="grid" x1="144" y1="0" x2="144" y2="220"/>
+    <line class="grid" x1="180" y1="0" x2="180" y2="220"/>
+
+    <text class="cell" x="18"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="35" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="90" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="145" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="200" text-anchor="middle">…</text>
+
+    <line class="arrow" x1="18"  y1="220" x2="18"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="54"  y1="220" x2="54"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="90"  y1="220" x2="90"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="126" y1="220" x2="126" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="162" y1="220" x2="162" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="198" y1="220" x2="198" y2="252" marker-end="url(#arr)"/>
+
+    <text class="poly" x="18"  y="276" text-anchor="middle">v₀(x)</text>
+    <text class="poly" x="54"  y="276" text-anchor="middle">v₁(x)</text>
+    <text class="poly" x="90"  y="276" text-anchor="middle">v₂(x)</text>
+    <text class="poly" x="126" y="276" text-anchor="middle">v₃(x)</text>
+    <text class="poly" x="162" y="276" text-anchor="middle">v₄(x)</text>
+    <text class="poly" x="198" y="276" text-anchor="middle">v₅(x)</text>
+  </g>
+
+  <!-- W -->
+  <g transform="translate(580,70)">
+    <text class="lbl" x="108" y="-26" text-anchor="middle">W</text>
+    <text class="head" x="18"  y="-6" text-anchor="middle">a₀</text>
+    <text class="head" x="54"  y="-6" text-anchor="middle">a₁</text>
+    <text class="head" x="90"  y="-6" text-anchor="middle">a₂</text>
+    <text class="head" x="126" y="-6" text-anchor="middle">a₃</text>
+    <text class="head" x="162" y="-6" text-anchor="middle">a₄</text>
+    <text class="head" x="198" y="-6" text-anchor="middle">a₅</text>
+    <rect class="box" x="0" y="0" width="216" height="220" rx="4"/>
+    <line class="grid" x1="0" y1="55"  x2="216" y2="55"/>
+    <line class="grid" x1="0" y1="110" x2="216" y2="110"/>
+    <line class="grid" x1="0" y1="165" x2="216" y2="165"/>
+    <line class="grid" x1="36"  y1="0" x2="36"  y2="220"/>
+    <line class="grid" x1="72"  y1="0" x2="72"  y2="220"/>
+    <line class="grid" x1="108" y1="0" x2="108" y2="220"/>
+    <line class="grid" x1="144" y1="0" x2="144" y2="220"/>
+    <line class="grid" x1="180" y1="0" x2="180" y2="220"/>
+
+    <text class="cell" x="18"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="35" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="35" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="35" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="90" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="90" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="90" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="145" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="145" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="145" text-anchor="middle">…</text>
+
+    <text class="cell" x="18"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="54"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="90"  y="200" text-anchor="middle">…</text>
+    <text class="cell" x="126" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="162" y="200" text-anchor="middle">…</text>
+    <text class="cell" x="198" y="200" text-anchor="middle">…</text>
+
+    <line class="arrow" x1="18"  y1="220" x2="18"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="54"  y1="220" x2="54"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="90"  y1="220" x2="90"  y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="126" y1="220" x2="126" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="162" y1="220" x2="162" y2="252" marker-end="url(#arr)"/>
+    <line class="arrow" x1="198" y1="220" x2="198" y2="252" marker-end="url(#arr)"/>
+
+    <text class="poly" x="18"  y="276" text-anchor="middle">w₀(x)</text>
+    <text class="poly" x="54"  y="276" text-anchor="middle">w₁(x)</text>
+    <text class="poly" x="90"  y="276" text-anchor="middle">w₂(x)</text>
+    <text class="poly" x="126" y="276" text-anchor="middle">w₃(x)</text>
+    <text class="poly" x="162" y="276" text-anchor="middle">w₄(x)</text>
+    <text class="poly" x="198" y="276" text-anchor="middle">w₅(x)</text>
+  </g>
+</svg>

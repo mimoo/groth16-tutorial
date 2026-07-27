@@ -1,0 +1,15 @@
+{
+  "name": "groth16-tutorial",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An interactive, incremental Groth16 tutorial built on sagemath-ts",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 4173",
+    "bundle": "bun run scripts/bundle.ts",
+    "check": "bun run scripts/lint-content.ts && bun run scripts/check-solutions.ts",
+    "lint": "bun run scripts/lint-content.ts",
+    "test": "bun run scripts/check-solutions.ts"
+  },
+  "license": "MIT"
+}
