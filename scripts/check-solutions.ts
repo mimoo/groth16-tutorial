@@ -65,6 +65,21 @@ for (const [index, chapter] of chapters.entries()) {
     if (graded && starterRun.passed) {
       console.log(`      ${YELLOW}warning: the starter already passes${OFF}`);
     }
+
+    // 3. A reader who hits Run before writing anything should get a plain
+    //    explanation, never a TypeError from a test poking at `undefined`.
+    const leaky = (starterRun.tests ?? []).filter((t) =>
+      /Cannot read propert(y|ies) of undefined|undefined is not an object/.test(
+        t.detail ?? ''
+      )
+    );
+    if (leaky.length) {
+      failures++;
+      console.log(
+        `      ${RED}starter leaks ${leaky.length} raw TypeError(s) into the ` +
+          `results: ${leaky[0]!.detail}${OFF}`
+      );
+    }
   }
 }
 

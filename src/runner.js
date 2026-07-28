@@ -96,6 +96,35 @@ export function evaluate(code, exportNames) {
   }
 }
 
+/** Marks the "you haven't written this yet" case so the UI can say so plainly. */
+const UNIMPLEMENTED = Symbol('unimplemented');
+
+/**
+ * Wrap each exported function so that returning `undefined` produces a clear
+ * message rather than a `TypeError` from deep inside a test.
+ *
+ * Every exercise in this tutorial returns a value — the closest thing to an
+ * exception is `quotientFor`, which returns `null` for a cheating witness.
+ * So `undefined` always means the body is still a TODO.
+ */
+function guardExports(values, names) {
+  const guarded = { ...values };
+  for (const name of names) {
+    const fn = values[name];
+    if (typeof fn !== 'function') continue;
+    guarded[name] = (...args) => {
+      const result = fn(...args);
+      if (result === undefined) {
+        const err = new Error(`${name}() returned undefined`);
+        err[UNIMPLEMENTED] = name;
+        throw err;
+      }
+      return result;
+    };
+  }
+  return guarded;
+}
+
 /**
  * Run an exercise end to end: evaluate, then grade.
  *
@@ -117,9 +146,10 @@ export function runExercise(exercise, code) {
     };
   }
 
+  const names = exercise.exports ?? [];
   let cases;
   try {
-    cases = exercise.tests(evaluated.values, Kit) ?? [];
+    cases = exercise.tests(guardExports(evaluated.values, names), Kit) ?? [];
   } catch (err) {
     return {
       passed: false,
@@ -130,6 +160,7 @@ export function runExercise(exercise, code) {
     };
   }
 
+  const stubbed = new Set();
   const results = cases.map(([name, predicate]) => {
     try {
       const value = predicate();
@@ -137,6 +168,10 @@ export function runExercise(exercise, code) {
         ? { name, pass: true }
         : { name, pass: false, detail: 'returned false' };
     } catch (err) {
+      if (err[UNIMPLEMENTED]) {
+        stubbed.add(err[UNIMPLEMENTED]);
+        return { name, pass: false, detail: err.message };
+      }
       return { name, pass: false, detail: `${err.name}: ${err.message}` };
     }
   });
@@ -145,6 +180,8 @@ export function runExercise(exercise, code) {
     passed: results.length > 0 && results.every((r) => r.pass),
     logs: evaluated.logs,
     error: null,
+    // Which exports are still returning nothing at all, if any.
+    unimplemented: [...stubbed],
     tests: results,
     ms: performance.now() - started,
   };
